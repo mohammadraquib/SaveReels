@@ -17,7 +17,10 @@ router.get('/info', async (req, res, next) => {
                         id: response.graphql.shortcode_media.id,
                         shortcode: response.graphql.shortcode_media.shortcode,
                         thumbnail: response.graphql.shortcode_media.display_url,
-                        download_url: response.graphql.shortcode_media.video_url
+                        download_url: response.graphql.shortcode_media.video_url,
+                        likes: response.graphql.shortcode_media.edge_media_preview_like.count,
+                        comments: response.graphql.shortcode_media.edge_media_to_parent_comment.count,
+                        views: response.graphql.shortcode_media.video_view_count
                     }
                 });
             } catch(err) {
