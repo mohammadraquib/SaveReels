@@ -2,7 +2,7 @@ const axios = require('axios')
 
 const SaveReels = {
     getReelCode: async (url) => {
-        if(/(https?:\/\/(?:www\.)?instagram\.com\/(reel|p)\/([^/?#&]+)).*/.test(url)) {
+        if(/(https?:\/\/(?:www\.)?instagram\.com\/reel\/([^/?#&]+)).*/.test(url)) {
             var matches = url.match(/(https?:\/\/(?:www\.)?instagram\.com\/(reel|p)\/([^/?#&]+)).*/);
             return matches[3];
         } else {
